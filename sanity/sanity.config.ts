@@ -14,8 +14,8 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-})
+});
+
 function structureTool(): any {
   throw new Error('Function not implemented.');
 }
-
