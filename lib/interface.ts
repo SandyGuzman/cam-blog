@@ -2,9 +2,6 @@ import { TypedObject } from "@sanity/types";
 import { ImageAsset } from "@sanity/types";
 
 // Definimos una interfaz para el contenido del blog, suponiendo que sea un string
-interface blogContent {
-  body: string; // Asumiendo que el contenido del blog es un string
-}
 
 // Interfaz para una tarjeta de blog simple
 export interface simpleBlogCard {
