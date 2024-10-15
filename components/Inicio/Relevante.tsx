@@ -4,22 +4,21 @@ import Image from 'next/image';
 import Link from 'next/link'; 
 import client from "@/lib/sanityclient";
 import imageUrlBuilder from "@sanity/image-url";
-
+import { ImageAsset }  from '@sanity/types'; // Asegúrate de que este tipo es el correcto
 
 interface Blog {
   publishedAt: string | number | Date;
   title: string;
   currentSlug: string;
-  titleImage: string;
+  titleImage: ImageAsset; // Asegúrate de que este tipo es correcto
   _createdAt: string;
   smallDescription: string; 
 }
 
 const builder = imageUrlBuilder(client);
-function urlFor(source: any) {
+function urlFor(source: ImageAsset) {
   return builder.image(source);
 }
-
 
 const Relevante: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -68,7 +67,7 @@ const Relevante: React.FC = () => {
               return (
                 <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-6">
                   <div className="relative w-[610px] h-[230px] border-2 border-[#95DE1C] bg-transparent text-black rounded-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6">
-              
+                    
                     <div className="absolute top-2 left-56 flex items-center ml-auto"> 
                       <Image
                         src="/static/logo.webp" 
@@ -87,7 +86,7 @@ const Relevante: React.FC = () => {
                         height={500}
                         quality={100}
                         priority
-                        className="w-[200px] h-[180px] object-position  rounded-3xl" 
+                        className="w-[200px] h-[180px] object-position rounded-3xl" 
                       />
                     </div>
                   )}
@@ -124,4 +123,3 @@ const Relevante: React.FC = () => {
 };
 
 export default Relevante;
- 
