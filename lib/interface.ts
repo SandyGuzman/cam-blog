@@ -1,3 +1,4 @@
+import { TypedObject } from "@sanity/types";
 import { ImageAsset } from "@sanity/types";
 
 // Definimos una interfaz para el contenido del blog, suponiendo que sea un string
@@ -19,7 +20,7 @@ export interface fullBlog {
   publishedAt: string | number | Date;
   currentSlug: string; // Slug actual para enrutamiento
   title: string; // Título del blog
-  content: blogContent; // Cambiamos 'any' por un tipo específico
+  content: TypedObject | TypedObject[]; // Cambiamos 'any' por un tipo específico
   titleImage: ImageAsset; // Reemplazamos 'any' con 'ImageAsset'
 }
 
