@@ -1,13 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
     <header className="absolute top-0 left-0 w-full flex flex-col md:flex-row justify-between items-center py-2 px-5 bg-transparent z-30">
       <div className="flex items-center">
-        <img
+        <Image
           src="/static/logo.webp"
           alt="Logo"
+          width={490} 
+          height={400} 
           className="h-full w-auto mt-2"
         />
       </div>

@@ -13,7 +13,7 @@ export interface fullBlog {
     content: any;        // Contenido completo del blog
     titleImage: any;      // Imagen del título (nuevamente, define un tipo más específico si es necesario)
 }
-interface Blog {
+export interface Blog {
     title: string;
     currentSlug: string;
     titleImage: string;

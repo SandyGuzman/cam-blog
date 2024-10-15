@@ -109,16 +109,15 @@ const Relevante: React.FC = () => {
           )}
         </div>
 
-        <div className="flex justify-end w-full md:w-1/2 mt-[-20vh]"> {/* Asegúrate de que el contenedor padre tenga display flex */}
-  <Image
-    src="/static/noticias1.webp"
-    alt="Campo"
-    width={490} 
-    height={400} 
-    className="object-cover"
-  />
-</div>
-
+        <div className="w-full md:w-1/2 ml-27 mt-[-20vh]">
+          <Image
+            src="/static/noticias1.webp"
+            alt="Campo"
+            width={490} 
+            height={400} 
+            className="object-cover"
+          />
+        </div>
       </div>
     </section>
   );

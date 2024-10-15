@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { IoArrowForward } from "react-icons/io5"; 
 
@@ -46,9 +47,11 @@ const Articulador = () => {
         </div>
 
         <div className="lg:w-1/2 flex justify-center">
-          <img
+          <Image
             src="/static/brazo1.webp" 
             alt="Descripción de la imagen"
+            width={490} 
+            height={400} 
             className="w-full max-w-md object-cover"
           />
         </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const serviciosData = [
@@ -51,10 +52,11 @@ const Servicios = () => {
             className="bg-white rounded-lg shadow-md w-44 h-90 overflow-hidden text-center flex flex-col"
           >
             <div className="flex justify-center items-center h-32">
-              <img 
-                src={servicio.image}  
-                className="w-32 h-30 object-cover rounded-lg mt-4" 
-              />
+              <Image 
+                src={servicio.image}
+                width={490}
+                height={400}
+                className="w-32 h-30 object-cover rounded-lg mt-4" alt={''}              />
             </div>
             <div className="p-4 flex flex-col justify-between h-full">
               <h3 className="text-[16px] font-bold mb-2 text-center flex-1 flex items-center justify-center">

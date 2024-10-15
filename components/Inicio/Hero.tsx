@@ -1,19 +1,24 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Hero: React.FC = () => {
   return (
     <section className="relative w-screen h-screen">
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/static/hero2.webp"
           alt="hero2"
+          width={490} 
+          height={400} 
           className="absolute left-0 w-full h-[670px] object-cover" 
         />
 
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/static/hero1.webp"
             alt="hero1"
+            width={490} 
+            height={400} 
             className="absolute w-full  z-30 h-[670px]"
           />
 

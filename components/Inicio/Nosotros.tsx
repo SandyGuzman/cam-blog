@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Nosotros = () => {
@@ -5,18 +6,22 @@ const Nosotros = () => {
     <div className="relative flex flex-col md:flex-row items-center p-6 max-w-screen-lg mx-auto">
 
       <div className="absolute top-0 right-0 mt-4 mr-4">
-        <img
+        <Image
           src="/static/logo.webp" 
           alt="Descripción de la imagen"
+          width={490} 
+          height={400} 
           className="rounded-full shadow-lg w-20 h-20" 
         />
       </div>
 
     
       <div className="md:w-1/2 mb-8 md:mb-0 md:ml-13 -ml-32"> 
-        <img
+        <Image
           src="/static/nosotros1.webp"
           alt="Descripción de la imagen"
+          width={490} 
+          height={400} 
           className="mb-8 w-full h-auto" 
         />
       </div>
