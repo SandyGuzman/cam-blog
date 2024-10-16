@@ -2,6 +2,9 @@ import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemaTypes';
 import { defineConfig } from 'sanity';
 
+
+
+
 export default defineConfig({
   name: 'default',
   title: 'CAM blog',
@@ -15,7 +18,7 @@ export default defineConfig({
     types: schemaTypes,
   },
 });
-
 function structureTool(): any {
   throw new Error('Function not implemented.');
 }
+
