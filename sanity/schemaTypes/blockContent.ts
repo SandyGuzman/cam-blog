@@ -1,4 +1,4 @@
-import { defineType } from 'sanity'; // Importa desde sanity
+import { defineType } from "@sanity/types";
 
 export default defineType({
   name: 'blockContent',
