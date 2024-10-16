@@ -29,7 +29,7 @@ export default async function ArticuloBlog({
     return <div>No se encontró el artículo.</div>;
   }
 
-  // Formatear la fecha
+
   const publishedDate = new Date(data.publishedAt).toLocaleDateString("es-ES", {
     year: "numeric",
     month: "long",
