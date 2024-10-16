@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity';
+import { defineType } from 'sanity'; // Importa desde sanity
 
 export default defineType({
   name: 'blockContent',
@@ -24,5 +24,5 @@ export default defineType({
       type: 'image',
       options: { hotspot: true },
     },
-  ],
+  ],
 });
