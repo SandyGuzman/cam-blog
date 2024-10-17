@@ -106,16 +106,15 @@ const Relevante: React.FC = () => {
           )}
         </div>
 
-        <div className="flex justify-end w-full md:w-1/2 mt-[-20vh]">
+           <div className="flex justify-end w-full md:w-1/2 h-[400px]">
           <Image
-          src="/static/noticias1.webp"
-          alt="Campo"
-          width={400} 
-          height={400} 
-          className="object-cover w-full h-full rounded-3xl"  // Esto hará que la imagen ocupe el espacio y respete las proporciones de su contenedor.
-          priority
-        />
-
+            src="/static/noticias1.webp"
+            alt="Campo"
+            width={400} 
+            height={400} 
+            className="object-cover w-full h-full rounded-3xl"
+            priority
+          />
         </div>
       </div>
     </section>
