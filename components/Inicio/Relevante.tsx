@@ -112,7 +112,7 @@ const Relevante: React.FC = () => {
             alt="Campo"
             width={400} 
             height={400} 
-            className="object-cover w-auto h-auto"  
+            className="object-cover w-full h-auto"  
           />
         </div>
       </div>
