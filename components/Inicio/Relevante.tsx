@@ -4,13 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link'; 
 import client from "@/lib/sanityclient";
 import imageUrlBuilder from "@sanity/image-url";
-import { ImageAsset }  from '@sanity/types'; // Asegúrate de que este tipo es el correcto
+import { ImageAsset }  from '@sanity/types'; 
 
 interface Blog {
   publishedAt: string | number | Date;
   title: string;
   currentSlug: string;
-  titleImage: ImageAsset; // Asegúrate de que este tipo es correcto
+  titleImage: ImageAsset; 
   _createdAt: string;
   smallDescription: string; 
 }
@@ -90,8 +90,6 @@ const Relevante: React.FC = () => {
                       />
                     </div>
                   )}
-
-                    
                     <div className="w-2/3 flex flex-col items-start justify-start text-left">
                       <h2 className="text-[20px] font-bold text-left">{blog.title}</h2>
                       <p className="text-[12px] font-extralight text-gray-600 text-left">{formattedDate}</p>
@@ -108,13 +106,13 @@ const Relevante: React.FC = () => {
           )}
         </div>
 
-        <div className="w-full md:w-1/2 ml-27 mt-[-20vh]">
+        <div className="flex justify-end w-full md:w-1/2 mt-[-20vh]">
           <Image
             src="/static/noticias1.webp"
             alt="Campo"
-            width={490} 
+            width={400} 
             height={400} 
-            className="object-cover"
+            className="object-cover w-auto h-auto"  
           />
         </div>
       </div>

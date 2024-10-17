@@ -13,9 +13,7 @@ const Articulador = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 lg:space-y-0 lg:space-x-8">
-        {/* Sección de la izquierda con texto */}
         <div className="lg:w-1/2 space-y-6">
-          {/* Título secundario y descripción */}
           <div>
             <h3 className="text-2xl font-semibold mb-2">Transformemos juntos el futuro del agro.</h3>
             <p className="text-gray-700 mb-4">

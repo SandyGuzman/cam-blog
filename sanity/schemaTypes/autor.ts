@@ -1,4 +1,4 @@
-import { Rule } from '@sanity/types'; // Importa los tipos de Rule desde @sanity/types
+import { Rule } from '@sanity/types'; 
 
 export default {
   name: 'author',

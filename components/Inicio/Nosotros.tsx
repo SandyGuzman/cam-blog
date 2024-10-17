@@ -14,8 +14,6 @@ const Nosotros = () => {
           className="rounded-full shadow-lg w-20 h-20" 
         />
       </div>
-
-    
       <div className="md:w-1/2 mb-8 md:mb-0 md:ml-13 -ml-32"> 
         <Image
           src="/static/nosotros1.webp"
@@ -25,10 +23,7 @@ const Nosotros = () => {
           className="mb-8 w-full h-auto" 
         />
       </div>
-
-      
-
-                <div className="md:w-1/2 md:pl-4 text-left ml-28">
+            <div className="md:w-1/2 md:pl-4 text-left ml-28">
             <h2 className="text-4xl text-[35px] font-bold mb-0">Nosotros</h2>
             <h3 className="text-4xl text-[20px] text-left text-[#1F4520] font-light mb-6">CONSEJO AGROALIMENTARIO DE MICHOACÁN</h3>
             <p className="text-black mb-4 text-[14px] font-light text-left">

@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             alt="hero1"
             width={490} 
             height={400} 
-            className="absolute w-full  z-30 h-[670px]"
+            className="absolute w-full z-30 h-[670px]"
           />
 
           <h1 className="absolute top-[21%] left-[20%] text-[35px] font-light text-[#FFFFFF]">
@@ -32,10 +32,8 @@ const Hero: React.FC = () => {
             AGROALIMENTARIO EN MICHOACÁN
           </p>
           <p className="absolute top-[55%] left-[25%] text-[35px] font-medium text-[#FFFFFF] max-w-3xl z-40 text-center leading-tight">
-  Transformando el campo a través de <br /> la innovación, sostenibilidad y colaboración
-</p>
-
-
+          Transformando el campo a través de <br /> la innovación, sostenibilidad y colaboración
+        </p>
           <button className="absolute top-[80%] left-[45%] px-14 py-2 font-semibold text-[20px] text-white border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full hover:text-white z-40">
             AFÍLIATE
           </button>

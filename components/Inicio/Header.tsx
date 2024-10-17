@@ -9,14 +9,14 @@ const Header: React.FC = () => {
         <Image
           src="/static/logo.webp"
           alt="Logo"
-          width={490} 
-          height={400} 
-          className="h-full w-auto mt-2"
+           width={490} 
+           height={400} 
+          className="h-auto w-auto mt-2"
         />
       </div>
 
       <div className="flex items-center  md:flex-row">
-        <nav className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-12 text-[18px]">
+        <nav className="flex md:flex-row space-y-2 md:space-y-0 md:space-x-12 text-[18px]">
           <Link href="/">
             <span className="text-[#95DE1C] font-semibold">INICIO</span>
           </Link>
