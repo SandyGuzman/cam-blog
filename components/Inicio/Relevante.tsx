@@ -65,8 +65,7 @@ const Relevante: React.FC = () => {
               });
               return (
                 <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-6">
-                  <div className="relative w-[610px] h-[230px] border-2 border-[#95DE1C] bg-transparent text-black rounded-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6">
-                    
+                  <div className="relative w-[610px] h-[230px] border-2 border-[#95DE1C] bg-transparent text-black rounded-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6 shadow-xl hover:shadow-xl">
                     <div className="absolute top-2 left-56 flex items-center ml-auto"> 
                       <Image
                         src="/static/logo.webp" 
@@ -106,15 +105,15 @@ const Relevante: React.FC = () => {
           )}
         </div>
 
-       <div className="w-full md:w-1/2 flex justify-end mt-[-50px]"> 
-        <Image
-          src="/static/noticias1.webp"
-          alt="Campo"
-          width={400}
-          height={400}
-          className="w-auto h-auto object-cover"
-        />
-      </div>
+        <div className="w-full md:w-1/2 flex justify-end mt-[-50px]"> 
+          <Image
+            src="/static/noticias1.webp"
+            alt="Campo"
+            width={400}
+            height={400}
+            className="w-auto h-auto object-cover"
+          />
+        </div>
 
       </div>
     </section>

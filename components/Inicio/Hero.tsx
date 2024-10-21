@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-screen h-screen">
+    <section className="relative w-screen mx-auto h-screen flex flex-col px-6 py-12 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/static/hero2.webp"
