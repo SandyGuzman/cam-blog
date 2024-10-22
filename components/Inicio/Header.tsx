@@ -23,7 +23,7 @@ const Header: React.FC = () => {
           alt="Logo"
           width={490}
           height={400}
-          className="h-auto w-auto mt-2"
+          className="h-auto w-[100px] mt-2"
         />
       </div>
       <div className="flex items-center md:flex-row">

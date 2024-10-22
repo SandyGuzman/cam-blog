@@ -20,11 +20,10 @@ async function getData() {
 export default async function Noticias() {
   const data: simpleBlogCard[] = await getData(); 
 
-  const headerImage = "/static/noticias4.webp"; 
-
+  const headerImage = "/static/noticias5.webp"; 
   return (
     <div className="py-0">
-      <div className="relative w-full h-[400px] mb-12">
+      <div className="w-screen  h-full rounded mb-12 -mx-4 relative overflow-hidden">
         <Image 
           src={headerImage} 
           alt="Header Image" 
@@ -33,7 +32,7 @@ export default async function Noticias() {
           quality={100}
           priority
         />
-      </div>
+    </div>   
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.map((post, idx) => {
