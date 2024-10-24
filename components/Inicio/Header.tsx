@@ -31,9 +31,6 @@ const Header: React.FC = () => {
           <Link href="/">
             <span className="text-[#95DE1C] font-semibold">INICIO</span>
           </Link>
-          <Link href="/servicios">
-            <span className="text-white transition-colors duration-300 font-semibold">SERVICIOS</span>
-          </Link>
           <Link href="/noticias">
             <span className="text-white transition-colors duration-300 font-semibold">NOTICIAS</span>
           </Link>
@@ -54,9 +51,6 @@ const Header: React.FC = () => {
           <nav className="flex flex-col items-center space-y-2 p-4">
             <Link href="/" onClick={closeMenu}>
               <span className="text-[#95DE1C] font-semibold">INICIO</span>
-            </Link>
-            <Link href="/servicios" onClick={closeMenu}>
-              <span className="text-white transition-colors duration-300 font-semibold">SERVICIOS</span>
             </Link>
             <Link href="/noticias" onClick={closeMenu}>
               <span className="text-white transition-colors duration-300 font-semibold">NOTICIAS</span>

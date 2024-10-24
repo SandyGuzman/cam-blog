@@ -106,13 +106,13 @@ const Relevante: React.FC = () => {
         </div>
 
         <div className="w-full md:w-1/2 flex justify-end mt-[-50px]"> 
-          <Image
-            src="/static/noticias1.webp"
-            alt="Campo"
-            width={400}
-            height={400}
-            className="w-auto h-[70vh] object-cover"
-          />
+        <Image
+          src="/static/noticias1.webp"
+          alt="Campo"
+          width={400}
+          height={400}
+          className="w-full h-auto object-cover md:w-[400px]" // Ancho completo en pantallas pequeñas, 400px en pantallas medianas
+        />
         </div>
 
       </div>
