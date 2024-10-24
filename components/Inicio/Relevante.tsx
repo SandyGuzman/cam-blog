@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link'; 
 import client from "@/lib/sanityclient";
 import imageUrlBuilder from "@sanity/image-url";
-import { ImageAsset }  from '@sanity/types'; 
+import { ImageAsset } from '@sanity/types'; 
 
 interface Blog {
   publishedAt: string | number | Date;
@@ -46,9 +46,9 @@ const Relevante: React.FC = () => {
 
   return (
     <section className="flex flex-col items-center justify-center w-full py-20">
-      <div className="w-full max-w-6xl mx-auto text-left mb-8 pl-0">
-        <h1 className="text-[35px] font-bold text-left text-gray-900">Noticias Relevantes</h1>
-        <p className="text-[20px] font-light text-left text-gray-600 mt-2">
+      <div className="w-full max-w-6xl mx-auto text-left mb-8">
+        <h1 className="text-[35px] font-bold text-gray-900">Noticias Relevantes</h1>
+        <p className="text-[20px] font-light text-gray-600 mt-2">
           Entérate de la actualidad relacionada al consejo
         </p>
       </div>
@@ -63,11 +63,9 @@ const Relevante: React.FC = () => {
                 month: 'long',
                 day: 'numeric',
               });
-
               return (
                 <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-6">
-                  <div className="relative w-[610px] h-[230px] border-2 border-[#95DE1C] bg-transparent text-black rounded-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6">
-                    
+                  <div className="relative w-[610px] h-[230px] border-2 border-[#95DE1C] bg-transparent text-black rounded-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6 shadow-xl hover:shadow-xl">
                     <div className="absolute top-2 left-56 flex items-center ml-auto"> 
                       <Image
                         src="/static/logo.webp" 
@@ -78,22 +76,23 @@ const Relevante: React.FC = () => {
                       <p className="text-[12px] font-light text-black ml-3 text-left">Consejo Agroalimentario de Michoacán</p>
                     </div>
                     {blog.titleImage && (
-                    <div className="w-1/3 mr-4">
-                      <Image
-                        src={urlFor(blog.titleImage).url()} 
-                        alt={blog.title}
-                        width={500}
-                        height={500}
-                        quality={100}
-                        priority
-                        className="w-[200px] h-[180px] object-position rounded-3xl" 
-                      />
-                    </div>
-                  )}
+                      <div className="w-1/3 mr-4">
+                        <Image
+                          src={urlFor(blog.titleImage).url()} 
+                          alt={blog.title}
+                          width={500}
+                          height={500}
+                          quality={100}
+                          priority
+                          className="w-[200px] h-[180px] object-cover rounded-3xl" 
+                        />
+                      </div>
+                    )}
+
                     <div className="w-2/3 flex flex-col items-start justify-start text-left">
                       <h2 className="text-[20px] font-bold text-left">{blog.title}</h2>
-                      <p className="text-[12px] font-extralight text-gray-600 text-left">{formattedDate}</p>
-                      <p className="text-[14px] font-light mt-2 text-gray-700 text-left">
+                      <p className="text-[12px] font-extralight text-black text-left">{formattedDate}</p>
+                      <p className="text-[14px] font-light mt-2 text-black text-left">
                         {blog.smallDescription}
                       </p>
                     </div>
@@ -106,16 +105,16 @@ const Relevante: React.FC = () => {
           )}
         </div>
 
-           <div className="flex justify-end w-full md:w-1/2 h-[400px]">
-          <Image
-            src="/static/noticias1.webp"
-            alt="Campo"
-            width={400} 
-            height={400} 
-            className="object-cover w-full h-full rounded-3xl"
-            priority
-          />
+        <div className="w-full md:w-1/2 flex justify-end mt-[-50px]"> 
+        <Image
+          src="/static/noticias1.webp"
+          alt="Campo"
+          width={400}
+          height={400}
+          className="w-full h-auto object-cover md:w-[400px]" // Ancho completo en pantallas pequeñas, 400px en pantallas medianas
+        />
         </div>
+
       </div>
     </section>
   );

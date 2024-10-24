@@ -37,7 +37,7 @@ const serviciosData = [
 const Servicios = () => {
   return (
     <div className="relative py-12 px-6 overflow-hidden">
-      <div className="relative z-10 text-center mb-8 -mt-12"> 
+      <div className="relative z-10 text-center mb-8 -mt-12">
         <h2 className="text-3xl font-bold mb-4 text-black">Nuestros Servicios</h2>
         <p className="text-black mb-6">
           Apoyamos el desarrollo integral del campo michoacano con soluciones innovadoras que impulsan <br />
@@ -45,7 +45,8 @@ const Servicios = () => {
         </p>
       </div>
 
-      <div className="flex justify-center space-x-4 z-10 relative">
+    
+      <div className="flex  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap justify-center gap-6 z-10 relative">
         {serviciosData.map((servicio) => (
           <div 
             key={servicio.id} 
@@ -56,7 +57,9 @@ const Servicios = () => {
                 src={servicio.image}
                 width={490}
                 height={400}
-                className="w-32 h-30 object-cover rounded-lg mt-4" alt={''}              />
+                className="w-32 h-30 object-cover rounded-lg mt-4" 
+                alt={servicio.title} 
+              />
             </div>
             <div className="p-4 flex flex-col justify-between h-full">
               <h3 className="text-[16px] font-bold mb-2 text-center flex-1 flex items-center justify-center">
