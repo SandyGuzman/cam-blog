@@ -3,7 +3,7 @@ import client from "@/lib/sanityclient";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanityclient";
 import { PortableText } from "@portabletext/react";
-import TypingAnimation from "@/components/ui/typing-animation"; 
+import TypingAnimation from "@/components/ui/typing-animation";
 
 async function getData(slug: string) {
   const query = `
@@ -12,8 +12,9 @@ async function getData(slug: string) {
       title,
       content,
       publishedAt,
-      titleImage
-    }[0]`; 
+      titleImage,
+      categoria->{title}
+    }[0]`;
   const data = await client.fetch(query, { slug });
   return data;
 }
@@ -28,7 +29,6 @@ export default async function ArticuloBlog({
   if (!data) {
     return <div>No se encontró el artículo.</div>;
   }
-
 
   const publishedDate = new Date(data.publishedAt).toLocaleDateString("es-ES", {
     year: "numeric",
@@ -49,7 +49,7 @@ export default async function ArticuloBlog({
         />
       </div>
 
-      <div className="relative max-w-3xl mx-auto p-6 bg-white  rounded-lg mt-8 z-10">
+      <div className="relative max-w-3xl mx-auto p-6 bg-white rounded-lg mt-8 z-10">
         <div className="flex items-center mb-6">
           <div className="flex-1">
             <TypingAnimation
@@ -72,8 +72,10 @@ export default async function ArticuloBlog({
             </div>
           )}
         </div>
-
-        <p className="text-gray-600 text-sm mb-4">{publishedDate}</p>
+        <div className="text-gray-600 text-sm mb-4">
+          {data.categoria?.title ? <p>Categoría: {data.categoria.title}</p> : <p>Categoría: Sin categoría</p>}
+          <p>{publishedDate}</p>
+        </div>
 
         <div className="prose prose-lg text-gray-700">
           {data.content ? (

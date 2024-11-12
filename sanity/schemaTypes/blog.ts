@@ -48,5 +48,12 @@ export default {
             type: 'datetime',
             title: 'Fecha de publicación',
         },
+        {
+            name: 'categoria',
+            title: 'Categoría',
+            type: 'reference',
+            to: [{ type: 'categoria' }], 
+            validation: (Rule: { required: () => any; }) => Rule.required(),
+          },
     ],
 }

@@ -1,6 +1,7 @@
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemaTypes';
 import { defineConfig } from 'sanity';
+import { structureTool } from 'sanity/structure';  // Importa la correcta
 
 export default defineConfig({
   name: 'default',
@@ -9,13 +10,9 @@ export default defineConfig({
   projectId: 'fbcpyu2x',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), visionTool()],  // Usa el importado
 
   schema: {
     types: schemaTypes,
   },
 });
-function structureTool(): any {
-  throw new Error('Function not implemented.');
-}
-

@@ -2,6 +2,7 @@ import { TypedObject } from "@sanity/types";
 import { ImageAsset } from "@sanity/types";
 
 export interface simpleBlogCard {
+  categoria: string 
   publishedAt: string | number | Date;
   _createdAt: string | number | Date;
   title: string; 
@@ -13,11 +14,12 @@ export interface fullBlog {
   currentSlug: string; 
   title: string; 
   content: TypedObject | TypedObject[]; 
-  titleImage: ImageAsset; 
+  titleImage: ImageAsset;   
 }
 export interface blog {
   title: string;
   currentSlug: string;
   titleImage: ImageAsset;
   _createdAt: string;
+  
 }

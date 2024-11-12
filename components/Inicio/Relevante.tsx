@@ -45,10 +45,10 @@ const Relevante: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex flex-col items-center justify-center w-full py-20">
-      <div className="w-full max-w-6xl mx-auto text-left mb-8">
-        <h1 className="text-[35px] font-bold text-gray-900">Noticias Relevantes</h1>
-        <p className="text-[20px] font-light text-gray-600 mt-2">
+    <section className="flex flex-col items-center justify-center w-full py-10 md:py-12 lg:py-1 overflow-hidden">
+      <div className="w-full max-w-6xl mx-auto text-left mb-8 p-6 md:p-10 lg:p-12">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">Noticias Relevantes</h1>
+        <p className="text-lg md:text-2xl font-light text-gray-600 mt-2">
           Entérate de la actualidad relacionada al consejo
         </p>
       </div>
@@ -64,35 +64,38 @@ const Relevante: React.FC = () => {
                 day: 'numeric',
               });
               return (
-                <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-6">
-                  <div className="relative w-[610px] h-[230px] border-2 border-[#95DE1C] bg-transparent text-black rounded-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6 shadow-xl hover:shadow-xl">
-                    <div className="absolute top-2 left-56 flex items-center ml-auto"> 
+                <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-4">
+                  <div className="relative w-full md:w-[500px] lg:w-[610px] h-auto border-2 border-[#95DE1C] bg-transparent text-black rounded-2xl rounded-tr-none md:rounded-tl-3xl md:rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-3 md:p-4 lg:p-6 shadow-lg hover:shadow-xl">
+
+                    <div className="absolute top-2 left-14 md:left-56 flex items-center ml-auto"> 
                       <Image
                         src="/static/logo.webp" 
                         alt="Logo"
-                        width={20} 
-                        height={20}
+                        width={14} 
+                        height={14}
+                        className="md:w-5 md:h-5" 
                       />
-                      <p className="text-[12px] font-light text-black ml-3 text-left">Consejo Agroalimentario de Michoacán</p>
+                      <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light text-black ml-2 md:ml-3 text-left">Consejo Agroalimentario de Michoacán</p>
                     </div>
+
                     {blog.titleImage && (
-                      <div className="w-1/3 mr-4">
+                      <div className="w-1/4 mr-2 md:w-1/3 md:mr-3">
                         <Image
                           src={urlFor(blog.titleImage).url()} 
                           alt={blog.title}
-                          width={500}
-                          height={500}
+                          width={120} 
+                          height={120}
                           quality={100}
                           priority
-                          className="w-[200px] h-[180px] object-cover rounded-3xl" 
+                          className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[180px] object-cover rounded-2xl md:rounded-3xl" 
                         />
                       </div>
                     )}
 
-                    <div className="w-2/3 flex flex-col items-start justify-start text-left">
-                      <h2 className="text-[20px] font-bold text-left">{blog.title}</h2>
-                      <p className="text-[12px] font-extralight text-black text-left">{formattedDate}</p>
-                      <p className="text-[14px] font-light mt-2 text-black text-left">
+                    <div className="flex flex-col items-start justify-start text-left w-3/4 md:w-2/3">
+                      <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-semibold">{blog.title}</h2>
+                      <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light text-gray-600">{formattedDate}</p>
+                      <p className="text-[12px] md:text-[14px] lg:text-[16px] font-light mt-1 text-black">
                         {blog.smallDescription}
                       </p>
                     </div>
@@ -105,15 +108,17 @@ const Relevante: React.FC = () => {
           )}
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-end mt-[-50px]"> 
-        <Image
-          src="/static/noticias1.webp"
-          alt="Campo"
-          width={400}
-          height={400}
-          className="w-full h-auto object-cover md:w-[400px]" // Ancho completo en pantallas pequeñas, 400px en pantallas medianas
-        />
-        </div>
+        <div className="md:w-1/2 mb-8 md:mb-0 mt-[-50px] flex justify-end items-center">
+  <Image
+    src="/static/noticias1.webp"
+    alt="Descripción de la imagen"
+    width={460}
+    height={400}
+    className="mb-8 w-30 h-auto"
+  />
+</div>
+
+
 
       </div>
     </section>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-screen mx-auto h-screen flex flex-col px-6 py-12 overflow-hidden">
+    <section className="relative w-screen mx-auto h-screen md:flex-row flex flex-col px-6 py-12 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/static/hero2.webp"
@@ -14,7 +14,6 @@ const Hero: React.FC = () => {
           priority
           className="absolute left-0 w-full h-[670px] object-cover" 
         />
-
         <div className="absolute inset-0">
           <Image
             src="/static/hero1.webp"
@@ -26,7 +25,7 @@ const Hero: React.FC = () => {
             className="absolute w-full z-30 h-[670px]"
           />
 
-          <h1 className="absolute top-[10%] left-[5%] sm:top-[15%] sm:left-[10%] md:top-[21%] md:left-[20%] text-[28px] sm:text-[30px] md:text-[35px] font-light text-[#FFFFFF]">
+          <h1 className="absolute top-[10%] left-[5%] sm:top-[20%] sm:left-[10%] md:top-[21%] md:left-[20%] text-[28px] sm:text-[30px] md:text-[35px] font-light text-[#FFFFFF]">
             CONSEJO AGROALIMENTARIO DE MICHOACÁN
           </h1>
           <p className="absolute top-[20%] left-[5%] sm:top-[22%] sm:left-[10%] md:top-[25%] md:left-[10%] text-[48px] sm:text-[60px] md:text-[80px] font-extrabold text-[#FFFFFF]">
