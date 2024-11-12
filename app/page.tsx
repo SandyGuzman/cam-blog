@@ -1,5 +1,4 @@
 import Hero from "@/components/Inicio/Hero";
-import Aliados from "@/components/Inicio/Aliados";
 import Relevante from "@/components/Inicio/Relevante";
 import Articulador from "@/components/Inicio/Articulador";
 import Nosotros from "@/components/Inicio/Nosotros";

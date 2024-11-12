@@ -2,12 +2,10 @@
 
 import { useEffect, useState } from "react";
 import NoticiaCard from "@/components/NoticiaCard";
-import client, { urlFor } from "@/lib/sanityclient";
+import client from "@/lib/sanityclient";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import { FaArrowLeft, FaArrowRight, FaSearch } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { BsNewspaper } from "react-icons/bs";
 
 interface Categoria {

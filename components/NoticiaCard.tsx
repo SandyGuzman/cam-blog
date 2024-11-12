@@ -4,11 +4,15 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { urlFor } from "@/lib/sanityclient";
 
+interface ImageObject {
+  url(): string;  // Define que titleImage tiene un método url() que devuelve un string (URL)
+}
+
 interface NoticiaCardProps {
   post: {
     title: string;
     currentSlug: string;
-    titleImage?: any;
+    titleImage?: ImageObject;  // Especifica que titleImage es un objeto con el método url()
     publishedAt: string;
     categoria?: string;
   };
@@ -27,7 +31,7 @@ const NoticiaCard: React.FC<NoticiaCardProps> = ({ post }) => {
       <div className="relative w-full h-[280px]">
         {titleImage ? (
           <Image
-            src={urlFor(titleImage).url()}
+            src={urlFor(titleImage).url()}  // Utiliza el método url() del objeto titleImage
             alt={title}
             layout="fill"
             objectFit="cover"
@@ -44,7 +48,6 @@ const NoticiaCard: React.FC<NoticiaCardProps> = ({ post }) => {
               height={50}
               quality={100}
               priority
-             
             />
           </div>
         )}
