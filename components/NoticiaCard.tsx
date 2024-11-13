@@ -71,13 +71,11 @@ const NoticiaItem: React.FC<{ post: Post }> = ({ post }) => {
 
   return (
     <div className="border-2 rounded-2xl overflow-hidden relative max-w-[450px] min-w-[250px] max-h-[400px]">
-      {/* Image Section */}
       <div className="relative w-full h-[280px]">
         {titleImage ? (
           <Image
             src={urlFor(titleImage).url()}
             alt={title}
-            layout="fill"
             objectFit="cover"
             quality={100}
             priority
