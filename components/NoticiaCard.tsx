@@ -23,7 +23,7 @@ interface Post {
   categoria?: Categoria;
 }
 
-const NoticiasPage: React.FC = () => {
+const NoticiaCard: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   const fetchPosts = async () => {
@@ -54,13 +54,13 @@ const NoticiasPage: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => (
-        <NoticiaCard key={post.currentSlug} post={post} />
+        <NoticiaItem key={post.currentSlug} post={post} />
       ))}
     </div>
   );
 };
 
-const NoticiaCard: React.FC<{ post: Post }> = ({ post }) => {
+const NoticiaItem: React.FC<{ post: Post }> = ({ post }) => {
   const { title, currentSlug, titleImage, publishedAt, categoria } = post;
 
   const formattedDate = new Date(publishedAt).toLocaleDateString("es-ES", {
