@@ -107,7 +107,6 @@ export default function Noticias() {
           />
         </div>
       </div>
-
       <div className="lg:px-10 md:px-6 px-4 relative my-10">
         <div className="flex gap-4 items-start md:flex-nowrap flex-wrap">
           <div className="p-5 bg-white border-2 rounded-xl transition-transform border-[#95DE1C] md:max-w-[250px]">

@@ -15,6 +15,7 @@ export interface fullBlog {
   title: string; 
   content: TypedObject | TypedObject[]; 
   titleImage: ImageAsset;   
+  categoria: string 
 }
 export interface blog {
   title: string;

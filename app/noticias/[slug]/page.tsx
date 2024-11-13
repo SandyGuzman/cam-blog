@@ -3,7 +3,7 @@ import client from "@/lib/sanityclient";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanityclient";
 import { PortableText } from "@portabletext/react";
-import TypingAnimation from "@/components/ui/typing-animation";
+import TypingAnimation from "@/components/ui/typing-animation"; 
 
 async function getData(slug: string) {
   const query = `
@@ -12,9 +12,8 @@ async function getData(slug: string) {
       title,
       content,
       publishedAt,
-      titleImage,
-      categoria->{title}
-    }[0]`;
+      titleImage
+    }[0]`; 
   const data = await client.fetch(query, { slug });
   return data;
 }
@@ -29,6 +28,7 @@ export default async function ArticuloBlog({
   if (!data) {
     return <div>No se encontró el artículo.</div>;
   }
+
 
   const publishedDate = new Date(data.publishedAt).toLocaleDateString("es-ES", {
     year: "numeric",
@@ -72,10 +72,8 @@ export default async function ArticuloBlog({
             </div>
           )}
         </div>
-        <div className="text-gray-600 text-sm mb-4">
-          {data.categoria?.title ? <p>Categoría: {data.categoria.title}</p> : <p>Categoría: Sin categoría</p>}
-          <p>{publishedDate}</p>
-        </div>
+
+        <p className="text-gray-600 text-sm mb-4">{publishedDate}</p>
 
         <div className="prose prose-lg text-gray-700">
           {data.content ? (

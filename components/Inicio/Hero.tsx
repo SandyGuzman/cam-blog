@@ -3,43 +3,54 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-screen mx-auto h-screen md:flex-row flex flex-col px-6 py-12 overflow-hidden">
+    <section className="relative w-full h-screen flex flex-col justify-center items-center px-6 py-12 overflow-hidden">
       <div className="absolute inset-0">
+        {/* Imagen de fondo 1 */}
         <Image
           src="/static/hero2.webp"
           alt="hero2"
           width={490}
           height={400}
           quality={100}
+          objectFit="cover"
           priority
           className="absolute left-0 w-full h-[670px] object-cover" 
         />
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 flex flex-col justify-center items-center">
+          {/* Imagen de fondo 2 */}
           <Image
             src="/static/hero1.webp"
             alt="hero1"
             width={490}
             height={400}
             quality={100}
+             objectFit="cover"
             priority
             className="absolute w-full z-30 h-[670px]"
           />
-
-          <h1 className="absolute top-[10%] left-[5%] sm:top-[20%] sm:left-[10%] md:top-[21%] md:left-[20%] text-[28px] sm:text-[30px] md:text-[35px] font-light text-[#FFFFFF]">
+      
+          <p className="text-center text-[35px] sm:text-[36px] md:text-[40px] font-light text-white z-30 mt-4">
             CONSEJO AGROALIMENTARIO DE MICHOACÁN
-          </h1>
-          <p className="absolute top-[20%] left-[5%] sm:top-[22%] sm:left-[10%] md:top-[25%] md:left-[10%] text-[48px] sm:text-[60px] md:text-[80px] font-extrabold text-[#FFFFFF]">
+          </p>
+          <p className="text-center text-[80px] sm:text-[56px] md:text-[64px] font-extrabold text-white z-10 mt-4">
             IMPULSANDO EL FUTURO
           </p>
-          <p className="absolute top-[35%] left-[5%] sm:top-[38%] sm:left-[10%] md:top-[40%] md:left-[10%] text-[40px] sm:text-[48px] md:text-[56px] font-semibold text-[#FFFFFF] z-40">
+          {/* Otro texto sobre la imagen */}
+          <p className="text-center text-[57px] sm:text-[48px] md:text-[56px] font-semibold text-white z-30 mt-4">
             AGROALIMENTARIO EN MICHOACÁN
           </p>
-          <p className="absolute top-[50%] left-[5%] sm:top-[53%] sm:left-[10%] md:top-[55%] md:left-[25%] text-[30px] sm:text-[32px] md:text-[35px] font-medium text-[#FFFFFF] max-w-3xl z-40 text-center leading-tight">
-            Transformando el campo a través de <br /> la innovación, sostenibilidad y colaboración
-          </p>
-          <button className="absolute top-[75%] left-[35%] sm:top-[78%] sm:left-[40%] md:top-[80%] md:left-[45%] px-10 sm:px-12 py-2 font-semibold text-[18px] sm:text-[20px] text-white border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full hover:text-white z-40">
-            AFÍLIATE
-          </button>
+
+          <p className="text-center text-[32px] sm:text-[34px] md:text-[36px] font-medium text-white z-30 leading-tight max-w-3xl mt-4">
+  Transformando el campo a través de la innovación, sostenibilidad y colaboración
+</p>
+
+
+          {/* Botón centrado */}
+          <button className="mt-8 transform translate-x-4 px-10 sm:px-12 py-2 font-semibold text-[18px] sm:text-[20px] text-white border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full hover:text-white z-30">
+  AFÍLIATE
+</button>
+
+
         </div>
       </div>
     </section>

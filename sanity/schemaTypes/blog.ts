@@ -49,11 +49,10 @@ export default {
             title: 'Fecha de publicación',
         },
         {
-            name: 'categoria',
-            title: 'Categoría',
-            type: 'reference',
-            to: [{ type: 'categoria' }], 
-            validation: (Rule: { required: () => any; }) => Rule.required(),
+            name: "categoria",
+            title: "Categoría",
+            type: "reference",  // Esto indica que la categoría es una referencia a otro documento
+            to: [{ type: "categoria" }], // Debe hacer referencia a un documento del tipo "categoria"
           },
-    ],
-}
+        ],
+      };
