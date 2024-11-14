@@ -25,11 +25,11 @@ const Footer = () => {
           <span className="absolute inset-0 w-full h-full bg-transparent"></span>
           <span className="relative">EXPO 2025</span>
         </button>
-        <button className="mb-5 relative inline-flex items-center justify-center px-14 py-2 overflow-hidden font-semibold text-[20px] text-white border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group hover:text-white">
-          <span className="absolute inset-0 w-full h-full bg-transparent"></span>
-          <span className="relative">AFÍLIATE</span>
-        </button>
-      </div>
+        <button className="mb-5 relative inline-flex items-center justify-center px-14 py-2 h-[50px] overflow-hidden font-semibold text-[20px] text-white border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group hover:text-white">
+        <span className="absolute inset-0 w-full h-full bg-transparent"></span>
+        <span className="relative">AFÍLIATE</span>
+      </button>
+    </div>
 
       <div className="flex flex-col md:flex-row justify-between items-start mt-[25vh] md:mt-0">
         <div className="mb-4 text-white">

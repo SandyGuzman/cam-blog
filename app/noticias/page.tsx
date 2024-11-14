@@ -20,7 +20,7 @@ async function getData() {
     "currentSlug": slug.current,
     titleImage,
     publishedAt,
-categoria->{title}
+    categoria->{title}
   }`;
 
   try {
@@ -48,12 +48,13 @@ async function fetchCategories(searchTerm = "") {
 }
 
 export default function Noticias() {
-  const [data, setData] = useState([]); 
+  const [data, setData] = useState([]);
   const [categories, setCategories] = useState<Categoria[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const noticiasPorPagina = 6;
 
+  // Paginación
   const indexOfLastNoticia = currentPage * noticiasPorPagina;
   const indexOfFirstNoticia = indexOfLastNoticia - noticiasPorPagina;
   const currentNoticias = data.slice(indexOfFirstNoticia, indexOfLastNoticia);
@@ -71,6 +72,7 @@ export default function Noticias() {
     }
   };
 
+  // Cargar datos iniciales
   useEffect(() => {
     const fetchData = async () => {
       const fetchedData = await getData();
@@ -79,6 +81,7 @@ export default function Noticias() {
     fetchData();
   }, []);
 
+  // Cargar categorías filtradas
   useEffect(() => {
     const fetchFilteredCategories = async () => {
       const fetchedCategories = await fetchCategories(searchTerm);
@@ -109,6 +112,7 @@ export default function Noticias() {
       </div>
       <div className="lg:px-10 md:px-6 px-4 relative my-10">
         <div className="flex gap-4 items-start md:flex-nowrap flex-wrap">
+          {/* Categorías */}
           <div className="p-5 bg-white border-2 rounded-xl transition-transform border-[#95DE1C] md:max-w-[250px]">
             <input
               type="text"
@@ -118,7 +122,7 @@ export default function Noticias() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Categorías</h2>
-            <ul className="space-y-2 overflow-y-auto" style={{ maxHeight: '250px' }}>
+            <ul className="space-y-2 overflow-y-auto" style={{ maxHeight: "250px" }}>
               {categories.length > 0 ? (
                 categories.map((item) => (
                   <li key={item._id} className="text-lg text-gray-800 cursor-pointer hover:text-[#95DE1C]">
@@ -130,6 +134,8 @@ export default function Noticias() {
               )}
             </ul>
           </div>
+
+          {/* Noticias */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 justify-center mx-auto">
             {currentNoticias.length > 0 ? (
               currentNoticias.map((post, idx) => (
@@ -144,6 +150,8 @@ export default function Noticias() {
             )}
           </div>
         </div>
+
+        {/* Paginación */}
         <div className="flex justify-center mt-10 gap-4">
           <button
             onClick={handlePrevPage}

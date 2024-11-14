@@ -23,44 +23,7 @@ interface Post {
   categoria?: Categoria;
 }
 
-const NoticiaCard: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  const fetchPosts = async () => {
-    try {
-      const query = `*[_type == "blog"]{
-        title,
-        currentSlug: slug.current,
-        titleImage,
-        publishedAt,
-        "categoria": categoria->{
-          _id,
-          nombre,
-          slug
-        }
-      }`;
-      const result = await client.fetch(query);
-      console.log(result); // Verifica los datos obtenidos
-      setPosts(result);
-    } catch (error) {
-      console.error("Error al obtener los posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {posts.map((post) => (
-        <NoticiaItem key={post.currentSlug} post={post} />
-      ))}
-    </div>
-  );
-};
-
-const NoticiaItem: React.FC<{ post: Post }> = ({ post }) => {
+const NoticiaCard: React.FC<{ post: Post }> = ({ post }) => {
   const { title, currentSlug, titleImage, publishedAt, categoria } = post;
 
   const formattedDate = new Date(publishedAt).toLocaleDateString("es-ES", {
@@ -76,10 +39,12 @@ const NoticiaItem: React.FC<{ post: Post }> = ({ post }) => {
           <Image
             src={urlFor(titleImage).url()}
             alt={title}
+            width={280}
+            height={50}
             objectFit="cover"
             quality={100}
             priority
-            className="rounded-xl brightness-75"
+            className=" brightness-75"
           />
         ) : (
           <div className="flex items-center justify-center w-full h-full bg-[#94de1c88]">
@@ -99,8 +64,6 @@ const NoticiaItem: React.FC<{ post: Post }> = ({ post }) => {
       <p className="uppercase absolute bottom-20 left-0 right-0 text-white bg-neutral-400 bg-opacity-65 px-5 py-1 text-sm rounded-full flex justify-center">
         {categoria?.nombre || "Sin categoría"}
       </p>
-
-      {/* Content Section */}
       <div className="flex items-center justify-between p-4">
         <div>
           <h2 className="font-montserrat font-medium text-neutral-600 text-xs md:text-sm lg:text-base">
@@ -110,8 +73,6 @@ const NoticiaItem: React.FC<{ post: Post }> = ({ post }) => {
             {formattedDate}
           </h4>
         </div>
-
-        {/* Link to the full post */}
         <Link
           href={`/noticias/${currentSlug}`}
           className="bg-white p-3 rounded-full border-2 hover:bg-[#95DE1C] hover:text-neutral-700 transition-all duration-300"
