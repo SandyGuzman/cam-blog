@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import { urlFor } from "@/lib/sanityclient";
-import client from "@/lib/sanityclient";
+import { urlFor } from "@/lib/sanityclient"
 
 interface ImageObject {
   url(): string;
