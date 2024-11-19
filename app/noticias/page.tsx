@@ -53,8 +53,6 @@ export default function Noticias() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const noticiasPorPagina = 6;
-
-  // Paginación
   const indexOfLastNoticia = currentPage * noticiasPorPagina;
   const indexOfFirstNoticia = indexOfLastNoticia - noticiasPorPagina;
   const currentNoticias = data.slice(indexOfFirstNoticia, indexOfLastNoticia);
@@ -65,14 +63,11 @@ export default function Noticias() {
       setCurrentPage(currentPage + 1);
     }
   };
-
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
   };
-
-  // Cargar datos iniciales
   useEffect(() => {
     const fetchData = async () => {
       const fetchedData = await getData();
@@ -80,8 +75,6 @@ export default function Noticias() {
     };
     fetchData();
   }, []);
-
-  // Cargar categorías filtradas
   useEffect(() => {
     const fetchFilteredCategories = async () => {
       const fetchedCategories = await fetchCategories(searchTerm);
@@ -134,8 +127,6 @@ export default function Noticias() {
               )}
             </ul>
           </div>
-
-          {/* Noticias */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 justify-center mx-auto">
             {currentNoticias.length > 0 ? (
               currentNoticias.map((post, idx) => (
@@ -150,8 +141,6 @@ export default function Noticias() {
             )}
           </div>
         </div>
-
-        {/* Paginación */}
         <div className="flex justify-center mt-10 gap-4">
           <button
             onClick={handlePrevPage}

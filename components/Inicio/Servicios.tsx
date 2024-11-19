@@ -44,8 +44,6 @@ const Servicios = () => {
           la competitividad y sostenibilidad del sector agroalimentario.
         </p>
       </div>
-
-    
       <div className="flex  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap justify-center gap-6 z-10 relative">
         {serviciosData.map((servicio) => (
           <div 

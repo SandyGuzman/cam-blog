@@ -45,16 +45,16 @@ const Relevante: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex flex-col items-center justify-center w-full py-10 md:py-12 lg:py-1 overflow-hidden">
+    <section className="flex flex-col items-center justify-center w-full mt-1 py-10 md:py-12 lg:py-1 overflow-hidden">
       <div className="w-full max-w-6xl mx-auto text-left mb-8 p-6 md:p-10 lg:p-12">
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">Noticias Relevantes</h1>
+        <h1 className="text-3xl md:text-5xl  font-bold text-gray-900">Noticias Relevantes</h1>
         <p className="text-lg md:text-2xl font-light text-gray-600 mt-2">
           Entérate de la actualidad relacionada al consejo
         </p>
       </div>
 
-      <div className="flex flex-wrap w-full max-w-6xl mx-auto">
-        <div className="w-full md:w-1/2 pr-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
+        <div className="w-full">
           {blogs.length > 0 ? (
             blogs.map((blog) => {
               const date = new Date(blog.publishedAt);
@@ -65,8 +65,8 @@ const Relevante: React.FC = () => {
               });
               return (
                 <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-4">
-                  <div className="relative w-full md:w-[500px] lg:w-[610px] h-auto border-2 border-[#95DE1C] bg-transparent text-black rounded-2xl rounded-tr-none md:rounded-tl-3xl md:rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-3 md:p-4 lg:p-6 shadow-lg hover:shadow-xl">
-
+                  <div className="relative w-full h-auto border-2 border-[#95DE1C] bg-transparent text-black rounded-2xl rounded-tr-none md:rounded-tl-3xl md:rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-3 md:p-4 lg:p-6 shadow-lg hover:shadow-xl">
+                    
                     <div className="absolute top-2 left-14 md:left-56 flex items-center ml-auto"> 
                       <Image
                         src="/static/logo.webp" 
@@ -79,7 +79,7 @@ const Relevante: React.FC = () => {
                     </div>
 
                     {blog.titleImage && (
-                      <div className="w-1/4 mr-2 md:w-1/3 md:mr-3">
+                      <div className="w-1/4 mr-2 md:w-1/3 md:mr-3 mb-4 md:mb-0">
                         <Image
                           src={urlFor(blog.titleImage).url()} 
                           alt={blog.title}
@@ -107,19 +107,15 @@ const Relevante: React.FC = () => {
             <p>No hay noticias disponibles.</p>
           )}
         </div>
-
-        <div className="md:w-1/2 mb-8 md:mb-0 mt-[-50px] flex justify-end items-center">
-  <Image
-    src="/static/noticias1.webp"
-    alt="Descripción de la imagen"
-    width={460}
-    height={400}
-    className="mb-8 w-30 h-auto"
-  />
-</div>
-
-
-
+        <div className="flex justify-center md:justify-end items-center mt-0 md:mt-0">
+          <Image
+            src="/static/noticias1.webp"
+            alt="Descripción de la imagen"
+            width={460}
+            height={400}
+            className="w-[300px] md:w-[460px] h-auto mb-0"
+          />
+        </div>
       </div>
     </section>
   );

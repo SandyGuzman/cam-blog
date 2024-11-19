@@ -3,48 +3,45 @@ import React from 'react';
 
 const Nosotros = () => {
   return (
-    <div className="relative flex flex-col md:flex-row items-center p-6 max-w-screen-lg mx-auto">
-
-      <div className="absolute top-0 right-0 mt-4 mr-4">
+    <div className="relative flex flex-col md:flex-row items-center p-6 max-w-screen-lg mx-auto space-y-6 md:space-y-0">
+      <div className="absolute top-4 right-4">
         <Image
-          src="/static/logo.webp" 
+          src="/static/logo.webp"
           alt="Descripción de la imagen"
-          width={490} 
-          height={400} 
-          className="rounded-full shadow-lg w-20 h-20" 
+          width={80}
+          height={80}
+          className="rounded-full shadow-lg w-16 h-16 md:w-20 md:h-20"
         />
       </div>
-      <div className="md:w-1/2 mb-8 md:mb-0 md:ml-13 ml-30 nosotrosImg"> 
+      <div className="w-full md:w-1/2">
         <Image
           src="/static/nosotros1.webp"
           alt="Descripción de la imagen"
           width={490}
           height={400}
-          layout="responsive"
-          className="mb-8 " 
+          className="rounded-md w-full object-cover"
         />
       </div>
-      <div className="md:w-1/2 pl-28 sm:pl-4 md:pl-28 lg:pl-4 xl:pl-28 2xl:pl-4 text-left ">
-        <h2 className="text-[35px] sm:text[35px] md:text[65px] lg:text[35px] xl:text[35px] 2xl:text[35px]  font-bold mb-0">Nosotros</h2>
-        <h3 className="text-4xl text-[20px] text-left text-[#1F4520] font-light mb-6">CONSEJO AGROALIMENTARIO DE MICHOACÁN</h3>
-        <p className="text-black mb-4 text-[14px] font-light text-justify">
-          El Consejo Agroalimentario de Michoacán es una organización que reúne a productores, empresarios y líderes del sector agrícola con el objetivo de transformar el campo michoacano. Nuestra misión es agregar valor a la producción primaria y fomentar una agroindustria sostenible que eleve la competitividad y calidad de vida de nuestras comunidades. A través de la colaboración con organismos nacionales e internacionales, impulsamos iniciativas que integran innovación, tecnología y sostenibilidad para posicionar a Michoacán como referente en el desarrollo agroalimentario. <br /> 
+      <div className="w-full md:w-1/2 text-left px-4 md:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Nosotros</h2>
+        <h3 className="text-lg md:text-xl text-[#1F4520] font-light mb-6">
+          CONSEJO AGROALIMENTARIO DE MICHOACÁN
+        </h3>
+        <p className="text-sm sm:text-base md:text-lg text-black font-light text-justify mb-6">
+          El Consejo Agroalimentario de Michoacán es una organización que reúne a productores, empresarios y líderes del sector agrícola con el objetivo de transformar el campo michoacano. Nuestra misión es agregar valor a la producción primaria y fomentar una agroindustria sostenible que eleve la competitividad y calidad de vida de nuestras comunidades. 
+          <br />
           <br />
           Nos comprometemos a crear un impacto real mediante asesorías, vinculación, capacitación y apoyo constante, fortaleciendo cada eslabón de la cadena agroalimentaria.
         </p>
-
-        <div className="flex space-x-4">
-          <button className="mb-5 relative inline-flex items-center justify-center px-14 py-2 overflow-hidden font-semibold text-[20px] text-white transition duration-300 ease-out border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group hover:text-white">
-            <span className="absolute inset-0 w-full h-full bg-transparent"></span>
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+          <button className="relative inline-flex items-center justify-center px-8 py-2 font-semibold text-base md:text-lg text-white transition duration-300 ease-out border-2 border-[#95DE1C] bg-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group hover:text-white">
             <span className="relative">AFÍLIATE</span>
           </button>
-          <button className="mb-5 relative inline-flex items-center justify-center px-9 py-2 overflow-hidden font-semibold text-[20px] text-black border-2 border-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group">
-            <span className="absolute inset-0 w-full h-full bg-transparent"></span>
+          <button className="relative inline-flex items-center justify-center px-8 py-2 font-semibold text-base md:text-lg text-black border-2 border-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group">
             <span className="relative">ORGANIGRAMA</span>
           </button>
         </div>
       </div>
-
     </div>
   );
 };
