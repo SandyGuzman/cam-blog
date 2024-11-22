@@ -8,7 +8,7 @@ import Expo from "@/components/Inicio/Expo";
 export default function Home() {
   return (
     <div>
-    <Hero />
+      <Hero />
     <Relevante />
     <Expo />
    <div className="relative">
@@ -19,7 +19,6 @@ export default function Home() {
     </div>
     </div>
     <Articulador />
-             
     </div>
   )
 }

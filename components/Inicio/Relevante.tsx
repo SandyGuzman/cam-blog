@@ -64,43 +64,48 @@ const Relevante: React.FC = () => {
                 day: 'numeric',
               });
               return (
-                <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-4">
-                  <div className="relative w-full h-auto border-2 border-[#95DE1C] bg-transparent text-black rounded-2xl rounded-tr-none md:rounded-tl-3xl md:rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-3 md:p-4 lg:p-6 shadow-lg hover:shadow-xl">
-                    
-                    <div className="absolute top-2 left-14 md:left-56 flex items-center ml-auto"> 
-                      <Image
-                        src="/static/logo.webp" 
-                        alt="Logo"
-                        width={14} 
-                        height={14}
-                        className="md:w-5 md:h-5" 
-                      />
-                      <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light text-black ml-2 md:ml-3 text-left">Consejo Agroalimentario de Michoacán</p>
-                    </div>
-
-                    {blog.titleImage && (
-                      <div className="w-1/4 mr-2 md:w-1/3 md:mr-3 mb-4 md:mb-0">
-                        <Image
-                          src={urlFor(blog.titleImage).url()} 
-                          alt={blog.title}
-                          width={120} 
-                          height={120}
-                          quality={100}
-                          priority
-                          className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[180px] object-cover rounded-2xl md:rounded-3xl" 
-                        />
-                      </div>
-                    )}
-
-                    <div className="flex flex-col items-start justify-start text-left w-3/4 md:w-2/3">
-                      <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-semibold">{blog.title}</h2>
-                      <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light text-gray-600">{formattedDate}</p>
-                      <p className="text-[12px] md:text-[14px] lg:text-[16px] font-light mt-1 text-black">
-                        {blog.smallDescription}
-                      </p>
-                    </div>
+                <Link href={`/noticias/${blog.currentSlug}`} key={blog.currentSlug} className="block mb-7">
+                <div className="relative w-[610px] min-h-[250px] border-2 border-[#95DE1C] bg-transparent text-black rounded-br-3xl rounded-bl-3xl rounded-tl-3xl rounded-tr-none hover:bg-[#94de1c4d] transition-all duration-300 cursor-pointer flex p-6 shadow-xl hover:shadow-xl pl-4 ml-10">
+                  
+                  <div className="absolute top-2 left-14 md:left-56 flex items-center ml-auto">
+                    <Image
+                      src="/static/logo.webp" 
+                      alt="Logo"
+                      width={14} 
+                      height={14}
+                      className="md:w-5 md:h-5" 
+                    />
+                    <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light text-black ml-3 md:ml-3 text-left">
+                      Consejo Agroalimentario de Michoacán
+                    </p>
                   </div>
-                </Link>
+              
+                  {blog.titleImage && (
+                    <div className="w-1/4 mr-2 md:w-1/3 md:mr-3 mb-4 md:mb-0">
+                      <Image
+                        src={urlFor(blog.titleImage).url()} 
+                        alt={blog.title}
+                        width={120} 
+                        height={120}
+                        quality={100}
+                        priority
+                        className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[180px] object-cover rounded-2xl md:rounded-3xl" 
+                      />
+                    </div>
+                  )}
+              
+                  <div className="flex flex-col items-start justify-start text-left w-3/4 md:w-2/3 space-y-2 p-4">
+                    <h2 className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold">{blog.title}</h2>
+                    <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light text-gray-600">{formattedDate}</p>
+                    <p className="text-[10px] md:text-[12px] lg:text-[14px] font-light mt-1 text-black text-justify">
+                      {blog.smallDescription}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+              
+              
+              
               );
             })
           ) : (

@@ -30,7 +30,7 @@ const Expo = () => {
         </div>
         <button 
           onClick={handleClick}
-          className="mt-4 mb-5 relative inline-flex items-center justify-center px-6 py-1.5 overflow-hidden font-semibold text-[18px] text-black border-2 border-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group"
+          className="mt-4 mb-5 relative inline-flex items-center justify-center px-6 py-1.5 overflow-hidden font-semibold text-[18px] text-black border-2 border-[#95DE1C] rounded-l-full rounded-tr-none rounded-br-full group hover:bg-[#95DE1C] hover:text-white transition-colors duration-300"
         >
           <span className="absolute inset-0 w-full h-full bg-transparent"></span>
           <span className="relative">EXPO 2025</span>

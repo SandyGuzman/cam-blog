@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -60,38 +61,36 @@
     --chart-5: 340 75% 55%;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-background text-foreground;
     font-family: 'Montserrat', sans-serif; /* Fuente Montserrat global */
   }
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* Estilos extendidos */
+@layer components {
+  .custom-text-semibold {
+    @apply font-semibold text-lg; /* Aplica la clase font-semibold */
+  }
+}
+
+/* Media queries (opcional, estructura lista para añadir estilos) */
 @media only screen and (max-width: 600px) {
-
+  /* Estilos para dispositivos pequeños */
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
+  /* Estilos para dispositivos más grandes */
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+  /* Estilos para tablets */
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+  /* Estilos para laptops/desktops */
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
- 
+  /* Estilos para dispositivos extra grandes */
 }
-
