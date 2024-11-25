@@ -12,7 +12,7 @@ const Expo = () => {
   };
 
   return (
-    <div className="flex justify-center py-20 my-0 bg-[radial-gradient(circle,_rgba(4,84,44,0.9)_10%,_rgba(149,222,28,0.7)_25%,_rgba(255,255,255,0)_40%)]">
+    <div className="flex justify-center md:py-20 my-0 bg-[radial-gradient(circle,_rgba(4,84,44,0.9)_10%,_rgba(149,222,28,0.7)_25%,_rgba(255,255,255,0)_40%)]">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-xs w-[300px] h-[400px] flex flex-col justify-between">
         <div className="text-center space-y-4">
           <Image 

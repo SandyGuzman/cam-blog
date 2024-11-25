@@ -36,7 +36,7 @@ const serviciosData = [
 
 const Servicios = () => {
   return (
-    <div className="relative py-12 px-6 overflow-hidden">
+    <div className="mt-8 relative py-12 px-6 overflow-hidden">
       <div className="relative z-10 text-center mb-8 -mt-12">
         <h2 className="text-3xl font-bold mb-4 text-black">Nuestros Servicios</h2>
         <p className="text-black mb-6">
@@ -44,26 +44,26 @@ const Servicios = () => {
           la competitividad y sostenibilidad del sector agroalimentario.
         </p>
       </div>
-      <div className="flex  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap justify-center gap-6 z-10 relative">
+      <div className="grid grid-cols-2 sm:flex flex-wrap items-center justify-center gap-2 md:gap-6 z-10 relative">
         {serviciosData.map((servicio) => (
           <div 
             key={servicio.id} 
-            className="bg-white rounded-lg shadow-md w-44 h-90 overflow-hidden text-center flex flex-col"
+            className="bg-white rounded-lg shadow-2xl w-40 h-full md:w-48 md:h-96 overflow-hidden text-center flex flex-col"
           >
-            <div className="flex justify-center items-center h-32">
+            <div className="flex justify-center items-center h-32 p-4">
               <Image 
                 src={servicio.image}
                 width={490}
                 height={400}
-                className="w-32 h-30 object-cover rounded-lg mt-4" 
+                className="w-full h-30 object-cover rounded-lg mt-4"
                 alt={servicio.title} 
               />
             </div>
             <div className="p-4 flex flex-col justify-between h-full">
-              <h3 className="text-[16px] font-bold mb-2 text-center flex-1 flex items-center justify-center">
+              <h3 className="text-md md:text-lg font-bold mb-2 text-center flex-1 flex items-start justify-center">
                 {servicio.title}
               </h3>
-              <p className="text-[12px] font-extralight text-black">{servicio.description}</p>
+              <p className="text-xs md:text-sm font-extralight text-black">{servicio.description}</p>
             </div>
           </div>
         ))}
